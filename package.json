@@ -4,6 +4,9 @@
   "main": "index.js",
   "author": "Jonas <jonasexplore@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "jest"
+  },
   "devDependencies": {
     "@shelf/jest-mongodb": "^1.2.3",
     "@types/express": "^4.17.11",
@@ -34,8 +37,6 @@
     "module-alias": "^2.2.2",
     "mongodb": "^3.7.3",
     "nodemailer": "^6.7.0"
-  },
-  "scripts": {
-    "test": "jest"
   }
 }
+
