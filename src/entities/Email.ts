@@ -9,11 +9,16 @@ export class Email {
     }
 
     const [local, domain] = email.split("@");
-    if (local.length > 64) {
+    if (!local.length || local.length > 64) {
       return false;
     }
 
-    if (domain.length > 255) {
+    if (!domain.length || domain.length > 255) {
+      return false;
+    }
+
+    const domainParts = domain.split(".");
+    if (domainParts.some((part) => part.length > 63)) {
       return false;
     }
 
