@@ -1,3 +1,5 @@
+import { UserRepository } from "../../usecases/ports/user-repository";
+import { InMemoryUserRepository } from "../../usecases/repositories/in-memory-user-repository";
 import { UserData } from "../../usecases/user-data";
 
 describe("UseCase > Register user on mailing list", () => {
