@@ -30,4 +30,9 @@ describe("Entities > Email validation", () => {
     const email = "e".repeat(64) + "@" + "d".repeat(256) + ".com";
     expect(Email.validate(email)).toBeFalsy();
   });
+
+  it("must be not accept domain with a part larger than 63 chars", () => {
+    const email = "e".repeat(64) + "@" + "d".repeat(64) + ".com";
+    expect(Email.validate(email)).toBeFalsy();
+  });
 });
