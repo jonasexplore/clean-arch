@@ -27,4 +27,18 @@ describe("Repositories > In memory user repository", () => {
     expect(user?.name).toBe("name");
     expect(user?.email).toBe("email@email.com");
   });
+
+  it("must be return all users", async () => {
+    const users: UserData[] = [
+      { email: "email1@gmail.com", name: "name1" },
+      { email: "email2@gmail.com", name: "name2" },
+      { email: "email3@gmail.com", name: "name3" },
+    ];
+
+    const repo = new InMemoryUserRepository(users);
+
+    const listedUsers = await repo.findAllUsers();
+
+    expect(listedUsers.length).toBe(3);
+  });
 });
